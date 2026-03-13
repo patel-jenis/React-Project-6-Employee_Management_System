@@ -10,7 +10,10 @@ const Form = ({ setEmployees, employees, setIsEdit, setEditIdx, isEdit, editIdx 
     useEffect(() => {
         if (isEdit && editIdx) {
             const editEmployee = employees.find((emp) => emp.id === editIdx);
-            setInput(editEmployee);
+
+            if (editEmployee) {
+                setInput(editEmployee);
+            }
         }
     }, [isEdit, editIdx, employees]);
 

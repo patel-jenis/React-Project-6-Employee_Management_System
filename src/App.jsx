@@ -20,6 +20,11 @@ const App = () => {
         let newEmp = employees.filter((emp) => emp.id !== id);
         setEmployees(newEmp);
 
+        if (editIdx === id) {
+            setIsEdit(false);
+            setEditIdx(null);
+        }
+
         toast.error("Employee Deleted Successfully...");
     }
 
